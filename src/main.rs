@@ -19,7 +19,9 @@ fn main() {
         Some("task3_part2_v1") => task3::task3_part2_v1(),
 
         Some("task4_part1_v1") => task4::task4_part1_v1(),
+        Some("task4_part1_v2") => task4::task4_part1_v2(),
         Some("task4_part2_v1") => task4::task4_part2_v1(),
+        Some("task4_part2_v2") => task4::task4_part2_v2(),
         _ => println!("Invalid argument"),
     }
 }

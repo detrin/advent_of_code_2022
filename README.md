@@ -20,9 +20,11 @@ cat data/2_sample.txt | cargo run task2_v1
 
 ## Benchmark Results
 
-| Filename | Function | Mean Time | Uncertainty |
+| Filename | Function | Mean Time [ms] | Uncertainty [ms] |
 |----------|----------|-----------|-------------|
-| data/1_example.txt | task1_v1 | 108.9 | 20.1 |
-| data/1_example.txt | task1_v2 | 108.4 | 18.1 |
-| data/1.txt | task1_v1 | 108.6 | 20.0 |
-| data/1.txt | task1_v2 | 112.0 | 17.9 |
+| data/1.txt | task1_part1_v1 | 98.5 | 32.5 |
+| data/1.txt | task1_part1_v2 | 102.4 | 19.4 |
+| data/1.txt | task1_part2_v2 | 102.4 | 19.2 |
+| data/2.txt | task2_part1_v1 | 101.1 | 18.5 |
+| data/2.txt | task2_part1_v2 | 96.2 | 11.6 |
+| data/2.txt | task2_part2_v2 | 101.6 | 18.9 |

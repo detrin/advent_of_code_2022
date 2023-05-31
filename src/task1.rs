@@ -1,6 +1,6 @@
 use std::io::{self, BufRead};
 
-pub fn task1_v1() {
+pub fn task1_part1_v1() {
     let stdin = io::stdin();
     let mut lines = stdin.lock().lines();
 
@@ -20,7 +20,7 @@ pub fn task1_v1() {
     println!("{}", max_value);
 }
 
-pub fn task1_v2() {
+pub fn task1_part1_v2() {
     let stdin = io::stdin();
     let input = stdin.lock().lines().map(|line| line.unwrap()).collect::<Vec<String>>();
 
@@ -33,4 +33,19 @@ pub fn task1_v2() {
             .max()
             .unwrap(),
     );
+}
+
+pub fn task1_part2_v1() {
+    let stdin = io::stdin();
+    let input = stdin.lock().lines().map(|line| line.unwrap()).collect::<Vec<String>>();
+
+    let mut summed_calories = input
+        .join("\n")
+        .split("\n\n")
+        .map(|e| e.lines().map(|c| c.parse::<u32>().unwrap()).sum::<u32>())
+        .collect::<Vec<u32>>();
+    summed_calories.sort_unstable_by(|a, b| b.cmp(a));
+    let top_three = summed_calories.iter().take(3).sum::<u32>();
+
+    println!("{}", top_three);
 }

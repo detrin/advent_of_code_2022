@@ -22,7 +22,11 @@ pub fn task1_part1_v1() {
 
 pub fn task1_part1_v2() {
     let stdin = io::stdin();
-    let input = stdin.lock().lines().map(|line| line.unwrap()).collect::<Vec<String>>();
+    let input = stdin
+        .lock()
+        .lines()
+        .map(|line| line.unwrap())
+        .collect::<Vec<String>>();
 
     println!(
         "{}",
@@ -37,7 +41,11 @@ pub fn task1_part1_v2() {
 
 pub fn task1_part2_v1() {
     let stdin = io::stdin();
-    let input = stdin.lock().lines().map(|line| line.unwrap()).collect::<Vec<String>>();
+    let input = stdin
+        .lock()
+        .lines()
+        .map(|line| line.unwrap())
+        .collect::<Vec<String>>();
 
     let mut summed_calories = input
         .join("\n")

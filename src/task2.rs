@@ -78,7 +78,7 @@ pub fn task2_part2_v1() {
             'Z' => 2,
             _ => panic!("Invalid choice"),
         };
-        total_score += 3*round_outcome;
+        total_score += 3 * round_outcome;
         let my_choice = (opponet_num_choice + round_outcome + 2) % 3;
         total_score += my_choice + 1;
     }

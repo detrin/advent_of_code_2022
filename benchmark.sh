@@ -16,3 +16,6 @@ $hyperfine_cmd "cat data/4.txt | cargo run task4_part1_v1"
 $hyperfine_cmd "cat data/4.txt | cargo run task4_part1_v2"
 $hyperfine_cmd "cat data/4.txt | cargo run task4_part2_v1"
 $hyperfine_cmd "cat data/4.txt | cargo run task4_part2_v2"
+
+$hyperfine_cmd "cat data/5.txt | cargo run task5_part1_v1"
+$hyperfine_cmd "cat data/5.txt | cargo run task5_part2_v1"

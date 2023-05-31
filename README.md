@@ -22,11 +22,11 @@ cat data/2_sample.txt | cargo run task2_v1
 
 | Filename | Function | Mean Time [ms] | Uncertainty [ms] |
 |----------|----------|-----------|-------------|
-| data/1.txt | task1_part1_v1 | 98.5 | 15.4 |
-| data/1.txt | task1_part1_v2 | 106.3 | 20.0 |
-| data/1.txt | task1_part2_v2 | 111.9 | 30.4 |
-| data/2.txt | task2_part1_v1 | 102.8 | 16.3 |
-| data/2.txt | task2_part1_v2 | 101.1 | 16.1 |
-| data/2.txt | task2_part2_v2 | 97.6 | 14.9 |
-| data/3.txt | task3_part1_v1 | 98.8 | 13.7 |
-| data/3.txt | task3_part2_v1 | 101.9 | 15.6 |
+| data/1.txt | task1_part1_v1 | 95.5 | 11.8 |
+| data/1.txt | task1_part1_v2 | 97.8 | 16.1 |
+| data/1.txt | task1_part2_v2 | 99.5 | 23.5 |
+| data/2.txt | task2_part1_v1 | 99.2 | 16.2 |
+| data/2.txt | task2_part1_v2 | 98.6 | 13.7 |
+| data/2.txt | task2_part2_v2 | 98.9 | 13.8 |
+| data/3.txt | task3_part1_v1 | 99.5 | 24.5 |
+| data/3.txt | task3_part2_v1 | 92.7 | 11.6 |

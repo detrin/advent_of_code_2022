@@ -8,6 +8,16 @@ Advent of Code 2022 purely in rust
 brew install hyperfine
 ```
 
+## Usage
+
+```shell
+cargo build
+```
+
+```shell
+cat data/2_sample.txt | cargo run task2_v1 
+```
+
 ## Benchmark Results
 
 | Filename | Function | Mean Time | Uncertainty |

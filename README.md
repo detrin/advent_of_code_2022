@@ -47,3 +47,5 @@ cat data/2_sample.txt | cargo run task2_v1
 | data/9.txt | task9_part2_v1 | 164.5 | 12.6 |
 | data/10.txt | task10_part1_v1 | 152.0 | 11.1 |
 | data/10.txt | task10_part2_v1 | 154.0 | 11.7 |
+| data/11.txt | task11_part1_v1 | 160.5 | 16.1 |
+| data/11.txt | task11_part2_v1 | 270.4 | 13.9 |

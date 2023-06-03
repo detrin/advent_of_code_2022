@@ -1,6 +1,6 @@
+use num::integer::lcm;
 use std::io::{self, BufRead};
 use std::vec;
-use num::integer::lcm;
 
 struct Monkey {
     items: Vec<u64>,
@@ -29,7 +29,6 @@ impl Monkey {
 
     fn print(&self) {
         println!("Starting items: {:?}", self.items);
-        
     }
 
     fn throw(&self, item: u64) -> (u64, usize) {
@@ -54,7 +53,7 @@ impl Monkey {
 
     fn get_divisor(&self) -> u64 {
         let mut num = 1;
-        while ! (self.test)(num) {
+        while !(self.test)(num) {
             num += 1;
         }
         num
@@ -95,22 +94,21 @@ fn parse_monkeys(input: &str) -> Vec<Monkey> {
                 let operation = match operation_str {
                     s if s.starts_with("old * old") => {
                         Box::new(|old| old * old) as Box<dyn Fn(u64) -> u64>
-                    },
+                    }
                     s if s.starts_with("old * ") => {
                         let factor: u64 = s.trim_start_matches("old * ").parse().unwrap();
                         Box::new(move |old| old * factor) as Box<dyn Fn(u64) -> u64>
-                    },
+                    }
                     s if s.starts_with("old + old") => {
                         Box::new(|old| old + old) as Box<dyn Fn(u64) -> u64>
-                    },
+                    }
                     s if s.starts_with("old + ") => {
                         let value: u64 = s.trim_start_matches("old + ").parse().unwrap();
                         Box::new(move |old| old + value) as Box<dyn Fn(u64) -> u64>
-                    },
-                    _s => unreachable!(), 
+                    }
+                    _s => unreachable!(),
                 };
-                
-                
+
                 monkey.operation = operation;
             }
         } else if line.starts_with("  Test:") {
@@ -120,12 +118,12 @@ fn parse_monkeys(input: &str) -> Vec<Monkey> {
                     s if s.starts_with("divisible by ") => {
                         let divisor: u64 = s.trim_start_matches("divisible by ").parse().unwrap();
                         let divisor_clone = divisor.clone();
-                        Box::new(move |num| num % divisor_clone == 0 as u64) as Box<dyn Fn(u64) -> bool>
-                    },
-                    _s => unreachable!(), 
+                        Box::new(move |num| num % divisor_clone == 0 as u64)
+                            as Box<dyn Fn(u64) -> bool>
+                    }
+                    _s => unreachable!(),
                 };
                 monkey.test = Box::new(test);
-
             }
         } else if line.starts_with("    If true: throw to monkey") {
             if let Some(monkey) = current_monkey.as_mut() {
@@ -133,7 +131,7 @@ fn parse_monkeys(input: &str) -> Vec<Monkey> {
                     .trim_start_matches("    If true: throw to monkey ")
                     .parse()
                     .unwrap();
-                monkey.throw_to_true = throw_to; 
+                monkey.throw_to_true = throw_to;
             }
         } else if line.starts_with("    If false: throw to monkey") {
             if let Some(monkey) = current_monkey.as_mut() {
@@ -151,10 +149,14 @@ fn parse_monkeys(input: &str) -> Vec<Monkey> {
     monkeys
 }
 
-
 pub fn task11_part1_v1() {
     let stdin = io::stdin();
-    let input: String = stdin.lock().lines().map(|l| l.unwrap()).collect::<Vec<String>>().join("\n");
+    let input: String = stdin
+        .lock()
+        .lines()
+        .map(|l| l.unwrap())
+        .collect::<Vec<String>>()
+        .join("\n");
 
     let mut monkeys = parse_monkeys(&input);
     // println!("Monkeys len: {}", monkeys.len());
@@ -174,7 +176,7 @@ pub fn task11_part1_v1() {
             }
 
             monkeys[m_i].items.clear();
-            
+
             for (new_worry_lvl, throw_to) in items_to_process {
                 // print!("> Monkey {} threw new {} to monkey {}", m_i, new_worry_lvl, throw_to);
                 let monkey_target = &mut monkeys[throw_to];
@@ -199,14 +201,20 @@ pub fn task11_part1_v1() {
     mokey_inspected_cnt_sorted.sort();
     mokey_inspected_cnt_sorted.reverse();
     // println!("Top 2: {}, {}", mokey_inspected_cnt_sorted[0], mokey_inspected_cnt_sorted[1]);
-    println!("{}", mokey_inspected_cnt_sorted[0] * mokey_inspected_cnt_sorted[1])
-
+    println!(
+        "{}",
+        mokey_inspected_cnt_sorted[0] * mokey_inspected_cnt_sorted[1]
+    )
 }
-
 
 pub fn task11_part2_v1() {
     let stdin = io::stdin();
-    let input: String = stdin.lock().lines().map(|l| l.unwrap()).collect::<Vec<String>>().join("\n");
+    let input: String = stdin
+        .lock()
+        .lines()
+        .map(|l| l.unwrap())
+        .collect::<Vec<String>>()
+        .join("\n");
 
     let mut monkeys = parse_monkeys(&input);
     // println!("Monkeys len: {}", monkeys.len());
@@ -238,7 +246,7 @@ pub fn task11_part2_v1() {
             }
 
             monkeys[m_i].items.clear();
-            
+
             for (new_worry_lvl, throw_to) in items_to_process {
                 // print!("> Monkey {} threw new {} to monkey {}", m_i, new_worry_lvl, throw_to);
                 let monkey_target = &mut monkeys[throw_to];
@@ -263,6 +271,8 @@ pub fn task11_part2_v1() {
     mokey_inspected_cnt_sorted.sort();
     mokey_inspected_cnt_sorted.reverse();
     // println!("Top 2: {}, {}", mokey_inspected_cnt_sorted[0], mokey_inspected_cnt_sorted[1]);
-    println!("{}", mokey_inspected_cnt_sorted[0] * mokey_inspected_cnt_sorted[1])
-
+    println!(
+        "{}",
+        mokey_inspected_cnt_sorted[0] * mokey_inspected_cnt_sorted[1]
+    )
 }

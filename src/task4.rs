@@ -14,7 +14,7 @@ pub fn task4_part1_v1() {
         let b = b[1..].parse::<usize>().unwrap();
         let c = c.parse::<usize>().unwrap();
         let d = d[1..].parse::<usize>().unwrap();
-        
+
         if a <= c && b >= d {
             fully_contained += 1;
         } else if c <= a && d >= b {
@@ -38,35 +38,35 @@ pub fn task4_part2_v1() {
         let b = b[1..].parse::<usize>().unwrap();
         let c = c.parse::<usize>().unwrap();
         let d = d[1..].parse::<usize>().unwrap();
-        
-        if ! (a < d && c > b) && ! (c < b && a > d){
+
+        if !(a < d && c > b) && !(c < b && a > d) {
             fully_contained += 1;
-        } 
+        }
     }
     println!("{}", fully_contained);
 }
 
 fn parse_numbers(line: &str) -> Option<(usize, usize, usize, usize)> {
     let mut iter = line.split(",");
-    
+
     if let (Some(range1), Some(range2)) = (iter.next(), iter.next()) {
         let (a, b) = parse_range(range1)?;
         let (c, d) = parse_range(range2)?;
         return Some((a, b, c, d));
     }
-    
+
     None
 }
 
 fn parse_range(range: &str) -> Option<(usize, usize)> {
     let mut iter = range.split("-");
-    
+
     if let (Some(a_str), Some(b_str)) = (iter.next(), iter.next()) {
         let a = a_str.trim().parse().ok()?;
         let b = b_str.trim().parse().ok()?;
         return Some((a, b));
     }
-    
+
     None
 }
 pub fn task4_part1_v2() {
@@ -78,7 +78,7 @@ pub fn task4_part1_v2() {
         if let Some((a, b, c, d)) = parse_numbers(&line) {
             if (a <= c && b >= d) || (c <= a && d >= b) {
                 fully_contained += 1;
-            } 
+            }
         }
     }
     println!("{}", fully_contained);
@@ -91,9 +91,9 @@ pub fn task4_part2_v2() {
 
     while let Some(Ok(line)) = lines.next() {
         if let Some((a, b, c, d)) = parse_numbers(&line) {
-            if ! (a < d && c > b) && ! (c < b && a > d){
+            if !(a < d && c > b) && !(c < b && a > d) {
                 fully_contained += 1;
-            } 
+            }
         }
     }
     println!("{}", fully_contained);

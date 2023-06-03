@@ -1,5 +1,5 @@
-use std::io::{self, BufRead};
 use regex::Regex;
+use std::io::{self, BufRead};
 
 pub fn task5_part1_v1() {
     let stdin = io::stdin();
@@ -18,7 +18,6 @@ pub fn task5_part1_v1() {
         }
         let mut row = Vec::new();
         for capture in re.captures_iter(&line.replace(" [", "[")) {
-            
             let matched = capture.get(0).unwrap().as_str().to_string();
             let letter = matched.chars().nth(1).unwrap();
             row.push(letter);
@@ -42,9 +41,9 @@ pub fn task5_part1_v1() {
         iter.next();
         let cnt = iter.next().unwrap().parse::<usize>().unwrap();
         iter.next();
-        let from_block = iter.next().unwrap().parse::<usize>().unwrap()-1;
+        let from_block = iter.next().unwrap().parse::<usize>().unwrap() - 1;
         iter.next();
-        let to_block = iter.next().unwrap().parse::<usize>().unwrap()-1;
+        let to_block = iter.next().unwrap().parse::<usize>().unwrap() - 1;
 
         let mut letters = Vec::new();
         for _ in 0..cnt {
@@ -60,7 +59,7 @@ pub fn task5_part1_v1() {
         if row.len() == 0 {
             print!(" ");
         } else {
-            print!("{}", row[row.len()-1]);
+            print!("{}", row[row.len() - 1]);
         }
     }
     println!();
@@ -83,7 +82,6 @@ pub fn task5_part2_v1() {
         }
         let mut row = Vec::new();
         for capture in re.captures_iter(&line.replace(" [", "[")) {
-            
             let matched = capture.get(0).unwrap().as_str().to_string();
             let letter = matched.chars().nth(1).unwrap();
             row.push(letter);
@@ -107,9 +105,9 @@ pub fn task5_part2_v1() {
         iter.next();
         let cnt = iter.next().unwrap().parse::<usize>().unwrap();
         iter.next();
-        let from_block = iter.next().unwrap().parse::<usize>().unwrap()-1;
+        let from_block = iter.next().unwrap().parse::<usize>().unwrap() - 1;
         iter.next();
-        let to_block = iter.next().unwrap().parse::<usize>().unwrap()-1;
+        let to_block = iter.next().unwrap().parse::<usize>().unwrap() - 1;
 
         let mut letters = Vec::new();
         for _ in 0..cnt {
@@ -125,7 +123,7 @@ pub fn task5_part2_v1() {
         if row.len() == 0 {
             print!(" ");
         } else {
-            print!("{}", row[row.len()-1]);
+            print!("{}", row[row.len() - 1]);
         }
     }
     println!();

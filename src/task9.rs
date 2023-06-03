@@ -49,7 +49,6 @@ pub fn task9_part1_v1() {
                 visited.insert((tail_x, tail_y), true);
             }
         }
-    
     }
 
     println!("{}", visited.len());
@@ -62,7 +61,7 @@ struct Point {
 
 impl Point {
     fn new(x: i32, y: i32) -> Point {
-        Point {x, y}
+        Point { x, y }
     }
 
     fn update(&mut self, x: i32, y: i32) {
@@ -76,7 +75,10 @@ impl Point {
     }
 
     fn Clone(&self) -> Point {
-        Point {x: self.x, y: self.y}
+        Point {
+            x: self.x,
+            y: self.y,
+        }
     }
 
     fn Copy(&mut self, other: &Point) {
@@ -141,18 +143,15 @@ pub fn task9_part1_v2() {
                 let pt = &mut current_slice[0];
                 move_pt(pt, pt_former);
             }
-            let pt_tail = &points[points_num-1];
+            let pt_tail = &points[points_num - 1];
             if !visited.contains_key(&(pt_tail.x, pt_tail.y)) {
                 visited.insert((pt_tail.x, pt_tail.y), true);
             }
         }
-    
     }
 
     println!("{}", visited.len());
 }
-
-
 
 pub fn task9_part2_v1() {
     let stdin = io::stdin();
@@ -196,12 +195,11 @@ pub fn task9_part2_v1() {
                 let pt = &mut current_slice[0];
                 move_pt(pt, pt_former);
             }
-            let pt_tail = &points[points_num-1];
+            let pt_tail = &points[points_num - 1];
             if !visited.contains_key(&(pt_tail.x, pt_tail.y)) {
                 visited.insert((pt_tail.x, pt_tail.y), true);
             }
         }
-    
     }
 
     println!("{}", visited.len());

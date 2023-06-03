@@ -77,7 +77,6 @@ pub fn task8_part1_v1() {
     println!("{}", count);
 }
 
-
 pub fn task8_part2_v1() {
     let stdin = io::stdin();
     let input = stdin

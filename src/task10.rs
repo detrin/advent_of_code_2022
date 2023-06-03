@@ -46,11 +46,9 @@ pub fn task10_part1_v1() {
             total_sum += debug(registry, index);
             let value = line.split(" ").nth(1).unwrap().parse::<i32>().unwrap();
             addx(value, &mut registry);
-            
         } else {
             panic!("Unknown instruction");
         }
-        
     }
     println!("{}", total_sum);
 }
@@ -69,14 +67,13 @@ fn print_screen(screen: &[[bool; 40]; 6]) {
 }
 
 fn screen_ray(screen: &mut [[bool; 40]; 6], time: usize, registry: i32) {
-    let pos = (time-1) % (40 * 6);
+    let pos = (time - 1) % (40 * 6);
     let x: i32 = (pos % 40) as i32;
     let y = pos / 40;
     let diff_x: i32 = x - registry;
     if diff_x.abs() <= 1 {
         screen[y][x as usize] = true;
     }
-    
 }
 
 pub fn task10_part2_v1() {
@@ -103,12 +100,9 @@ pub fn task10_part2_v1() {
             screen_ray(&mut screen, index, registry);
             let value = line.split(" ").nth(1).unwrap().parse::<i32>().unwrap();
             addx(value, &mut registry);
-            
         } else {
             panic!("Unknown instruction");
         }
-        
-        
     }
     print_screen(&screen);
 }

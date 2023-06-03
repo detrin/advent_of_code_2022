@@ -32,25 +32,35 @@ impl Directory {
 
     fn total_size(&self) -> usize {
         let file_sizes: usize = self.files.iter().map(|file| file.size).sum();
-        let subdirectory_sizes: usize = self.directories.iter().map(|directory| directory.total_size()).sum();
+        let subdirectory_sizes: usize = self
+            .directories
+            .iter()
+            .map(|directory| directory.total_size())
+            .sum();
         file_sizes + subdirectory_sizes
     }
 
     fn total_size_except(&self, except: usize) -> usize {
         let file_sizes: usize = self.files.iter().map(|file| file.size).sum();
-        let subdirectory_sizes: usize = self.directories.iter().map(|directory| {
-            if directory.id == except {
-                0
-            } else {
-                directory.total_size_except(except)
-            }
-        }).sum();
+        let subdirectory_sizes: usize = self
+            .directories
+            .iter()
+            .map(|directory| {
+                if directory.id == except {
+                    0
+                } else {
+                    directory.total_size_except(except)
+                }
+            })
+            .sum();
         file_sizes + subdirectory_sizes
     }
 
     fn get_directory_mut(&mut self, name: &str) -> Option<&mut Directory> {
         // return &mut
-        self.directories.iter_mut().find(|directory| directory.name == name)
+        self.directories
+            .iter_mut()
+            .find(|directory| directory.name == name)
     }
 
     fn get_directory_recursive(&mut self, name: &[String]) -> Option<&mut Directory> {
@@ -138,7 +148,7 @@ fn parse_input(input: &str) -> Directory {
                 }
             }
             "ls" => {
-                // empty 
+                // empty
             }
             _ => {
                 let file_name = tokens[1].to_owned();
@@ -179,7 +189,10 @@ pub fn task7_part1_v1() {
     let max_size = 100000;
     let directories = find_directories_with_size(&root_directory, max_size);
 
-    let total_sizes: usize = directories.iter().map(|directory| directory.total_size()).sum();
+    let total_sizes: usize = directories
+        .iter()
+        .map(|directory| directory.total_size())
+        .sum();
 
     println!("{}", total_sizes);
 }

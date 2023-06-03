@@ -36,5 +36,8 @@ hyperfine_cmd="hyperfine --warmup 10 --runs 100"
 # $hyperfine_cmd "cat data/10.txt | cargo run task10_part1_v1"
 # $hyperfine_cmd "cat data/10.txt | cargo run task10_part2_v1"
 
-$hyperfine_cmd "cat data/11.txt | cargo run task11_part1_v1"
-$hyperfine_cmd "cat data/11.txt | cargo run task11_part2_v1"
+# $hyperfine_cmd "cat data/11.txt | cargo run task11_part1_v1"
+# $hyperfine_cmd "cat data/11.txt | cargo run task11_part2_v1"
+
+$hyperfine_cmd "cat data/12.txt | cargo run task12_part1_v1"  
+$hyperfine_cmd "cat data/12.txt | cargo run task12_part2_v1"

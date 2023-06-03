@@ -22,23 +22,26 @@ cat data/2_sample.txt | cargo run task2_v1
 
 | Filename | Function | Mean Time [ms] | Uncertainty [ms] |
 |----------|----------|-----------|-------------|
-| data/1.txt | task1_part1_v1 | 167.5 | 20.8 |
-| data/1.txt | task1_part1_v2 | 162.9 | 12.7 |
-| data/1.txt | task1_part2_v2 | 165.9 | 16.2 |
-| data/2.txt | task2_part1_v1 | 163.1 | 11.4 |
-| data/2.txt | task2_part1_v2 | 165.0 | 13.7 |
-| data/2.txt | task2_part2_v2 | 159.8 | 16.6 |
-| data/3.txt | task3_part1_v1 | 160.5 | 19.5 |
-| data/3.txt | task3_part2_v1 | 161.4 | 10.8 |
-| data/4.txt | task4_part1_v1 | 162.2 | 20.1 |
-| data/4.txt | task4_part1_v2 | 159.8 | 14.9 |
-| data/4.txt | task4_part2_v1 | 159.4 | 15.4 |
-| data/4.txt | task4_part2_v2 | 161.6 | 14.4 |
-| data/5.txt | task5_part1_v1 | 164.0 | 18.8 |
-| data/5.txt | task5_part2_v1 | 161.8 | 13.3 |
-| data/6.txt | task6_part1_v1 | 163.7 | 14.0 |
-| data/6.txt | task6_part2_v1 | 177.6 | 23.8 |
-| data/7.txt | task7_part1_v1 | 163.5 | 19.4 |
-| data/7.txt | task7_part2_v1 | 165.4 | 15.2 |
-| data/8.txt | task8_part1_v1 | 174.7 | 18.5 |
-| data/8.txt | task8_part2_v1 | 166.8 | 16.6 |
+| data/1.txt | task1_part1_v1 | 155.3 | 13.4 |
+| data/1.txt | task1_part1_v2 | 157.1 | 15.0 |
+| data/1.txt | task1_part2_v2 | 153.6 | 12.7 |
+| data/2.txt | task2_part1_v1 | 155.1 | 15.1 |
+| data/2.txt | task2_part1_v2 | 156.2 | 15.4 |
+| data/2.txt | task2_part2_v2 | 153.4 | 12.3 |
+| data/3.txt | task3_part1_v1 | 154.7 | 13.6 |
+| data/3.txt | task3_part2_v1 | 155.3 | 13.0 |
+| data/4.txt | task4_part1_v1 | 162.4 | 29.5 |
+| data/4.txt | task4_part1_v2 | 157.3 | 20.2 |
+| data/4.txt | task4_part2_v1 | 160.4 | 31.6 |
+| data/4.txt | task4_part2_v2 | 169.7 | 60.4 |
+| data/5.txt | task5_part1_v1 | 157.0 | 12.0 |
+| data/5.txt | task5_part2_v1 | 157.5 | 16.8 |
+| data/6.txt | task6_part1_v1 | 166.4 | 45.0 |
+| data/6.txt | task6_part2_v1 | 168.7 | 13.8 |
+| data/7.txt | task7_part1_v1 | 158.8 | 20.4 |
+| data/7.txt | task7_part2_v1 | 160.4 | 14.7 |
+| data/8.txt | task8_part1_v1 | 167.7 | 17.8 |
+| data/8.txt | task8_part2_v1 | 164.8 | 41.3 |
+| data/9.txt | task9_part1_v1 | 162.0 | 12.1 |
+| data/9.txt | task9_part1_v2 | 159.4 | 10.7 |
+| data/9.txt | task9_part2_v1 | 164.5 | 12.6 |

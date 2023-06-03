@@ -40,7 +40,9 @@ fn main() {
         Some("task8_part1_v1") => task8::task8_part1_v1(),
         Some("task8_part2_v1") => task8::task8_part2_v1(),
 
-        Some("task9_part1_v1") => task9::task9_part1_v1(),      
+        Some("task9_part1_v1") => task9::task9_part1_v1(),
+        Some("task9_part1_v2") => task9::task9_part1_v2(),   
+        Some("task9_part2_v1") => task9::task9_part2_v1(),   
 
         _ => println!("Invalid argument"),
     }

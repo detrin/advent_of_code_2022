@@ -11,6 +11,7 @@ mod task7;
 mod task8;
 mod task9;
 mod task13;
+mod task14;
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
@@ -59,6 +60,9 @@ fn main() {
 
         Some("task13_part1_v1") => task13::task13_part1_v1(),
         Some("task13_part2_v1") => task13::task13_part2_v1(),
+
+        Some("task14_part1_v1") => task14::task14_part1_v1(),
+        Some("task14_part2_v1") => task14::task14_part2_v1(),
 
         _ => println!("Invalid argument"),
     }

@@ -49,5 +49,8 @@ hyperfine_small_cmd="hyperfine --runs 5"
 # $hyperfine_cmd "cat data/14.txt | cargo run task14_part1_v1"
 # $hyperfine_cmd "cat data/14.txt | cargo run task14_part2_v1"
 
-$hyperfine_small_cmd "cat data/15.txt | cargo run task15_part1_v1"
-$hyperfine_small_cmd "cat data/15.txt | cargo run task15_part2_v1"
+# $hyperfine_small_cmd "cat data/15.txt | cargo run task15_part1_v1"
+# $hyperfine_small_cmd "cat data/15.txt | cargo run task15_part2_v1"
+
+$hyperfine_small_cmd "cat data/16.txt | cargo run task16_part1_v1"
+$hyperfine_small_cmd "cat data/16.txt | cargo run task16_part2_v1"

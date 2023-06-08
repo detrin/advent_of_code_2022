@@ -513,14 +513,14 @@ pub fn task17_part2_v1() {
             // whole state is 1D vector numeric_dir, piece_type and state_vec
             let mut state = vec![numeric_dir, piece_type];
             state.extend(state_vec);
-            // println!("state: {:?}", state);
+            println!("state: {:?}", state);
             if grid_states.contains_key(&state) {
                 cycle_found = true;
                 let cycle_start = grid_states.get(&state).unwrap();
                 let cycle_len = placed_cnt - cycle_start;
                 let remaining = 1000000000000 - placed_cnt;
                 let cycle_remaining = remaining % cycle_len;
-                placed_cnt += cycle_remaining;
+                placed_cnt += remaining - cycle_remaining;
                 println!("cycle found: {} {}", cycle_start, cycle_len);
             } else {
                 grid_states.insert(state, placed_cnt);

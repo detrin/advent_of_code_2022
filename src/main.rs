@@ -78,6 +78,7 @@ fn main() {
         Some("task17_part2_v1") => task17::task17_part2_v1(),
 
         Some("task18_part1_v1") => task18::task18_part1_v1(),
+        Some("task18_part2_v1") => task18::task18_part2_v1(),
 
         _ => println!("Invalid argument"),
     }
